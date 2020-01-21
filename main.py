@@ -16,7 +16,8 @@ def defineminas(h, w, total):
 def criamatriz(matriz, conjunto):
   '''
   coração do código. Primeiro ele marca a proximidade
-  de todas as lajotas e em 
+  de todas as lajotas a uma bomba e em seguida
+  marca as bombas
   '''
   for i in conjunto:
     x, y = i
@@ -35,8 +36,10 @@ def desenhamatriz(matriz):
       print(col, end="  ")
     print("\n")
 
-#Inicialmente implementei algo mais simples 
-def matrizvazia(h, w):
+#Inicialmente implementei algo mais simples "[[0]*h]*w"
+#mas infelizmente ele clonava celulas e tava dando
+#erro
+def GeraMatrizVazia(h, w):
   matriz=[]
   for i in range(0,h):
     linha=[]
@@ -47,7 +50,6 @@ def matrizvazia(h, w):
 
 h, w, tot = 10, 10, 20
 pos=list(defineminas(h, w, tot))
-#pos=[(2, 4)]
-matrizv=matrizvazia(h, w)
-novamatriz=criamatriz(matrizv, pos)
+matrizv=(GeraMatrizVazia(h, w),)
+novamatriz=criamatriz(matrizv[0], pos)
 desenhamatriz(novamatriz)
