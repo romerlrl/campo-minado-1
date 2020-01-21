@@ -1,5 +1,10 @@
 from random import randint
 '''
+Até aqui, o código só gera o grid no terminal. Mas para frente
+hei de trabalhar na interface gráfica.
+'''
+
+'''
 Essa primeira função determina a posição das minas
 e tem como parâmetro a altura e largura da matriz
 e o total de minas a serem colocadas.
